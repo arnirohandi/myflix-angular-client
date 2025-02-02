@@ -48,6 +48,17 @@ export class FetchApiDataService {
   }
 
   /**
+   * User Login
+   * @param loginData - Object containing username and password
+   * @returns Observable with server response
+   */
+  public userLogin(loginData: any): Observable<any> {
+    return this.http.post(`${apiUrl}login`, loginData).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  /**
    * Deregister a user
    * @param username - The username of the user to be deleted
    * @returns Observable with server response
