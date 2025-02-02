@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -15,7 +16,7 @@ export class AppComponent {
   constructor(public dialog: MatDialog) { }
 
   protected openUserRegistrationDialog(): void {
-    // This is the function that will open the dialog when the signup button is clicked  
+    // This is the function that will open the dialog when the signup button is clicked
     this.dialog.open(UserRegistrationFormComponent, {
       // Assigning the dialog a width
       width: '280px'
