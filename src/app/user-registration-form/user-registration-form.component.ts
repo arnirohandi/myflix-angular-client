@@ -12,10 +12,11 @@ import {MatCardModule} from '@angular/material/card';
 import {FormsModule} from '@angular/forms';
 import {MatFormField} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-user-registration-form',
-  imports: [MatCardModule, FormsModule, MatFormField, MatInput],
+  imports: [MatCardModule, FormsModule, MatFormField, MatInput, MatButton],
   templateUrl: './user-registration-form.component.html',
   styleUrl: './user-registration-form.component.scss'
 })
