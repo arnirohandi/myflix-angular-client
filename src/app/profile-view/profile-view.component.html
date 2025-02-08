@@ -1,0 +1,25 @@
+<div class="profile-view">
+  <h1>My Profile</h1>
+
+  <form [formGroup]="profileForm">
+    <div class="form-group">
+      <label>Username: </label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+
+    <div class="form-group">
+      <label>Email: </label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+
+    <button
+      mat-raised-button
+      (click)="updateProfile()"
+      style="margin-right: 10px;"
+      color="primary"
+    >
+      Update Profile
+    </button>
+  </form>
+
+</div>

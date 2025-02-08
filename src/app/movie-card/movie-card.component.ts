@@ -11,6 +11,7 @@ import {
 import {NgForOf} from '@angular/common';
 import {MatIcon} from '@angular/material/icon';
 import {MatButton} from '@angular/material/button';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -31,8 +32,10 @@ import {MatButton} from '@angular/material/button';
 export class MovieCardComponent {
   movies: any[] = [];
 
-  constructor(public fetchApiData: FetchApiDataService) {
-  }
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -44,5 +47,8 @@ export class MovieCardComponent {
       console.log(this.movies);
       return this.movies;
     });
+  }
+  goToProfileView(): void {
+    this.router.navigate(['/profile']);
   }
 }

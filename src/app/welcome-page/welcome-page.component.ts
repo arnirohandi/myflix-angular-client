@@ -3,7 +3,6 @@ import {UserLoginFormComponent} from '../user-login-form/user-login-form.compone
 import {UserRegistrationFormComponent} from '../user-registration-form/user-registration-form.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MatButton} from '@angular/material/button';
-import {MovieCardComponent} from '../movie-card/movie-card.component';
 
 @Component({
   selector: 'app-welcome-page',
