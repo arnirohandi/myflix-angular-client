@@ -17,9 +17,6 @@ export class WelcomePageComponent {
   constructor(public dialog: MatDialog) {
   }
 
-  ngOnInit(): void {
-  }
-
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: '280px'
@@ -29,13 +26,6 @@ export class WelcomePageComponent {
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '280px'
-    });
-  }
-
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '1000px',
-      maxWidth: 'none'
     });
   }
 }
