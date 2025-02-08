@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+  <p *ngIf="data.type === 'genre' || data.type === 'director' || data.type === 'movie'">
+    {{ data.content }}
+  </p>
+  <p *ngIf="data.type === 'director' && data.birth_date">
+    Born: {{ data.birth_date | date }}
+  </p>
+  <p *ngIf="data.type === 'director' && data.death_year">
+    Died: {{ data.death_year }}
+  </p>
+  <img *ngIf="data.image_url" [src]="data.image_url" alt="{{ data.title }}" class="dialog-image"/>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Close</button>
+</mat-dialog-actions>

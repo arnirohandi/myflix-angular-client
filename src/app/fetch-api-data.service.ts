@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
 // Declaring the API URL that will provide data for the client app
@@ -119,9 +119,16 @@ export class FetchApiDataService {
    * @returns Observable with server response
    */
   public addMovieToFavorites(username: string, movieId: string): Observable<any> {
-    return this.http.post(`${apiUrl}users/${encodeURIComponent(username)}/movie/${encodeURIComponent(movieId)}`, null).pipe(
-      catchError(this.handleError)
-    );
+    const token = localStorage.getItem('token'); // Retrieve the token from local storage
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      'Content-Type': 'application/json', // Ensure the content type is set
+    });
+
+    return this.http
+      .post(`${apiUrl}users/${encodeURIComponent(username)}/movies/${encodeURIComponent(movieId)}`, null, { headers })
+      .pipe(catchError(this.handleError));
   }
 
   /**

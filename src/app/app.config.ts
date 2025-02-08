@@ -14,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideAnimations(),
     provideAnimationsAsync(),
-    MatIconModule
+    MatIconModule, provideAnimationsAsync()
   ]
 };
